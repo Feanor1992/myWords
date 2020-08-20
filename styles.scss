@@ -1,0 +1,101 @@
+$text-color: #000000;
+$link-color: blue;
+$font-size: 16px;
+$background: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+$margin: auto;
+
+@mixin body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+@mixin links-tag{
+    text-decoration: none;
+    color: $link-color;
+}
+
+@mixin main-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin container-flex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@mixin margin-auto {
+    margin: $margin;
+    margin-top: 15px;
+}
+
+@mixin media($min-width, $max-width) {
+    body {
+       min-width: $min-width;
+       max-width: $max-width;
+    }
+}
+
+html, body {
+    @include body;
+}
+
+body {
+    min-width: 1366px;
+    background: $background, no-repeat;
+    background-size: cover;
+    color: $text-color;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: $font-size;
+    text-align: center;
+}
+
+body {
+    @include main-flex;
+}
+
+a {
+    @include links-tag;
+}
+
+header {
+    flex: 0 0 auto;
+    @include container-flex;
+    width: 75%;
+    @include margin-auto;
+}
+
+main {
+    flex: 1 0 auto;
+    @include container-flex;
+    flex-direction: column;
+    justify-content: start;
+    @include margin-auto;
+}
+
+.main-title {
+
+}
+
+main div {
+    background-color: #ffffff;
+    width: 90%;
+    height: 70%;
+    border: 1px solid $text-color;
+    @include margin-auto;
+}
+
+footer {
+    flex-shrink: 0;
+    @include container-flex;
+    width: 75%;
+    margin: $margin;
+}
+
+footer a {
+    font-size: $font-size * 1.5;
+}
