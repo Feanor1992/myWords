@@ -9,6 +9,7 @@ $margin: auto;
     padding: 0;
     height: 100%;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 @mixin links-tag{
@@ -49,7 +50,7 @@ body {
     background: $background, no-repeat;
     background-size: cover;
     color: $text-color;
-    font-family: Verdana, Arial, sans-serif;
+    font-family: Courier New, Courier;
     font-size: $font-size;
     text-align: center;
 }
@@ -78,15 +79,19 @@ main {
 }
 
 .main-title {
-
+    text-align: center;
 }
 
-main div {
+main #editor {
     background-color: #ffffff;
     width: 90%;
     height: 70%;
     border: 1px solid $text-color;
     @include margin-auto;
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 10px;
+    box-shadow: 6px 10px 9px 0px rgba(0,0,0,0.75);
 }
 
 footer {
